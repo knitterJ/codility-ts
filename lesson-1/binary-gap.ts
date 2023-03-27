@@ -21,7 +21,7 @@ function binarygap(N: number): number {
 
   // W JavaScript i TypeScript, liczby rozpoczynające się od zera są traktowane jako liczby zapisane w systemie ósemkowym, z wyjątkiem liczby zero, która jest zawsze zapisywana w systemie dziesiętnym.
   // Jeśli chcesz przypisać wartość binarną 0011 do zmiennej, możesz zrobić to za pomocą LITERAŁU BINARNEGO, który zaczyna się od prefiksu 0b, a nie 0o, jak w przypadku liczby ósemkowej.
-  const num = 0b110000100000001;
+  // const num = 0b110000100000001;
   // console.log(num);
 
   // Argument metody toString() określa bazę, w której chcemy reprezentować daną liczbę. W tym przypadku argument wynosi 2, co oznacza, że chcemy otrzymać reprezentację binarną liczby num.
@@ -46,13 +46,11 @@ function binarygap(N: number): number {
       if(counter > maxZeroes){
         maxZeroes = counter;
         // console.log(maxZeroes);
-        counter = 0;
       }
-
-      // reset counter
-
+      // reset counter (the reset should stay outside previous if statement, as we should reset the counter no matter whether it's greater than maxZeroes or not. For example: 10000010000010001 -> maxZero would be equal to 8, not 5)
+      counter = 0;
       // start counting zeroes
-    } else if (flagOneEncountered && numStr[i]==="0") {
+    } else if (numStr[i]==="0") {
       // console.log("wlazlo");
       counter += 1;
     }
@@ -61,4 +59,4 @@ function binarygap(N: number): number {
   return maxZeroes;
 }
 
-console.log(binarygap(21434));
+console.log(binarygap(1376796946));
