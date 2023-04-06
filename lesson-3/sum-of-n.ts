@@ -33,16 +33,11 @@ function solution(A: number[]): number {
     //check out how beautifully smart and simple at the same time this for loop is.
     console.log(count);
     //it basically fills up 0 array with 1 each time the number (that is treated as index in count array) is encountered - thus we can calculate how many times the particular number appeared
-  }
-
-  for (let i = 0; i < count.length; i++) {
     if (count[i] === 0) {
       //simply return index of the missing number
       return i + 1;
     }
-  }
-
-  return undefined;
+  } return undefined;
 
 // or you can do it by sorting the numbers and then check where's the difference greater than one between two numbers. Both solutions have the same time complexity of O(N log N) in the worst-case scenario due to the sorting operation in solution 2. However, the first solution may have better performance in practice because it only requires a single pass over the array and has a lower constant factor in its time complexity. In contrast, solution 2 requires two passes, one for sorting and another for finding the missing number, and has a higher constant factor due to the sorting operation. Therefore, the first solution may be a better choice if performance is a concern.
 
@@ -57,10 +52,10 @@ function solution(A: number[]): number {
 //   return A.length + 1;
 }
 
-console.log(solution([1,2,3,4,5,7]));
+console.log(solution([1,2,3,4,5,6]));
 
 
-// or... the most optimal would be finding mathematical forumula that includes the sum of the N numbers and the sum of our numbers. It has always O(N) complexity. 
+// or... the most optimal would be finding mathematical forumula that includes the sum of the N numbers and the sum of our numbers. It has always O(N) complexity.
 // inne najbardziej optymalne podejście - to znaczy znalezienie matematycznego wzoru
 
 // 1..6
